@@ -1,3 +1,3 @@
-*assets_public/*
+*assets_public/images/*
 *requirements.txt
 *backend/gateway/*.php
