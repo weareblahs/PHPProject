@@ -5,6 +5,6 @@ $lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $userID = $_COOKIE['userID'];
 
-mysqli_query($cn, "UPDATE users SET firstName = '$firstName', lastName = '$lastName', email = '$email' WHERE userUniq                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ID = '$userID'");
+mysqli_query($cn, "UPDATE users SET firstName = '$firstName', lastName = '$lastName', email = '$email' WHERE userUniqID = '$userID'");
 mysqli_close($cn);
 header('Location: /profile');
