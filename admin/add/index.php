@@ -29,7 +29,7 @@ function get_content()
             <br>
             <div class="d-flex justify-content-between"><?php foreach ($ratings as $rating) : ?>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="filmRating" name="filmRating" value="<?php echo $rating ?>">
+                  <input class="form-check-input" type="radio" id="filmRating" name="filmRating" value="<?php echo $rating ?>">
                   <label class="form-check-label" for="filmRating"><?php echo $rating ?></label>
                 </div>
               <?php endforeach; ?>

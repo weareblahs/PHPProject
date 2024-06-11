@@ -1,2 +1,3 @@
 # mts
- Cinema booking and management system based on PHP and MySQL
+
+(otherwise known as "Movie Ticketing System" as per the abbrevation of the project name)
