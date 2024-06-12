@@ -12,3 +12,4 @@ $lastName = $_POST['lastName'];
 $vendorName = $firstName . " " . $lastName;
 
 // insert payment gateway code here
+// see README.md for gateway redirection information

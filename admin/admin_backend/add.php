@@ -31,16 +31,16 @@ $releaseDate = $_POST['releaseDate'];
 
 $isAvailablePostResponse = $_POST['isAvailable'];
 if (!is_null($isAvailablePostResponse)) {
-    $isAvailable = 1;
+    $isAvailable = "1";
 } else {
-    $isAvailable = 0;
+    $isAvailable = "0";
 }
 
 $isFeaturedPostResponse = $_POST['isFeatured'];
 if (!is_null($isFeaturedPostResponse)) {
-    $isFeatured = 1;
+    $isFeatured = "1";
 } else {
-    $isFeatured = 0;
+    $isFeatured = "0";
 }
 
 $filmDescription = $_POST['filmDescription'];
@@ -72,28 +72,39 @@ $logo_filename = $path . "logo" . ".png";
 $logo_web_filename = $web_path . "logo" . ".png";
 
 if (isset($_POST["submit"])) {
+    if (!empty($_FILES["logoImage"]["name"])) {
+        echo "logo exists";
+        $logoAvailable = "1";
+        move_uploaded_file($logoImage["tmp_name"], $logo_filename);
+    } else {
+        echo "no logo";
+        $logoAvailable = "0";
+    }
     $check = getimagesize($posterImage["tmp_name"]);
     $check = getimagesize($artworkImage["tmp_name"]);
     if ($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         echo "<br>";
         echo "Starting upload...";
-        if (move_uploaded_file($posterImage["tmp_name"], $poster_filename) && move_uploaded_file($artworkImage["tmp_name"], $artwork_filename) || move_uploaded_file($logoImage["tmp_name"], $logo_filename)) {
+        // logo check + upload logo
+
+        if (move_uploaded_file($posterImage["tmp_name"], $poster_filename) && move_uploaded_file($artworkImage["tmp_name"], $artwork_filename)) {
             echo "The files with ID " . $filmID . " has been uploaded.";
             // begin database query
+
             $add_film_query = "INSERT INTO films
             (
             filmID, experienceID, name, altName, 
             logoPath, filmRating, filmGenre, releaseDate, 
             isAvailable, isFeatured, filmDescription, cast, 
             director, imagePosterPath, artwork, trailerURL,
-            associatedShowtimeID, subtitle, language, length
+            associatedShowtimeID, subtitle, language, length, logoAvailable
             ) VALUES (
             '$filmID', '$experienceID', '$name', '$altName',
             '$logo_web_filename', '$filmRating', '$filmGenre', '$releaseDate',
             $isAvailable, $isFeatured, '$filmDescription', '$cast',
             '$director', '$poster_web_filename', '$artwork_web_filename', '$trailerURL',
-            'none', '$subtitles', '$language', '$runningTime'
+            'none', '$subtitles', '$language', '$runningTime', '$logoAvailable'
             )";
             mysqli_query($cn, $add_film_query);
             mysqli_close($cn);
