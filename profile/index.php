@@ -31,6 +31,7 @@ function get_content()
             </div>
             <div class="col-6">
                 <h1><i class="fa fa-mouse-pointer" aria-hidden="true"></i> Quick links</h1>
+                <a href="/tickets" class="btn btn-success w-100 text-center"><i class="fa fa-ticket" aria-hidden="true"></i> View booked tickets</a>
             </div>
         </div>
     </div>

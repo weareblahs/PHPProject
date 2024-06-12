@@ -106,7 +106,27 @@ function get_content()
                             </tr>
                         </tbody>
                     </table>
-
+                    <?php if ($filmInfo['filmRating'] == "18") : ?>
+                        <div class="container" style="background-color: red; color: white; padding: 1em; margin-bottom: 1em; border-radius: 20px">
+                            <div>
+                                <h3 class="text-center"><b>Heads up!</b></h3>
+                                <div class="d-flex">
+                                    <img src="/assets_public/images/filmRatings/18.png" alt="" class="img-responsive" style="padding-right: 0.5em; margin-top: 0.2em" width="75px" height="50px">
+                                    <h6>This movie is rated 18, which means that the movie is <b>suitable for audiences 18 years old and above</b>. Audiences must present their identity card as a proof of age to enter the hall.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    <?php elseif ($filmInfo['filmRating'] == "16") : ?>
+                        <div class="container" style="background-color: red; color: white; padding: 1em; margin-bottom: 1em; border-radius: 20px">
+                            <div>
+                                <h3 class="text-center"><b>Heads up!</b></h3>
+                                <div class="d-flex">
+                                    <img src="/assets_public/images/filmRatings/16.png" alt="" class="img-responsive" style="padding-right: 0.5em; margin-top: 0.2em" width="75px" height="50px">
+                                    <h6>This movie is rated 16, which means that the movie is <b>suitable for audiences 16 years old and above</b>. Audiences must present their identity card as a proof of age to enter the hall.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                     <?php if (isset($_COOKIE['userID'])) : ?>
                         <div>
                             <h4>Personal information</h4>
