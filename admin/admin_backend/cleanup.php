@@ -18,6 +18,7 @@ foreach ($content as $selectedOption) {
     }
     if ($selectedOption == "deleteAllShowtimes") {
         mysqli_query($cn, "DELETE FROM showtimes");
+        mysqli_query($cn, "UPDATE films SET associatedShowtimeID = 'none';");
     }
 }
 mysqli_close($cn);
