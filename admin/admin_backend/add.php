@@ -31,7 +31,7 @@ $releaseDate = $_POST['releaseDate'];
 
 $isAvailablePostResponse = $_POST['isAvailable'];
 if (!is_null($isAvailablePostResponse)) {
-    $isAvailable = "1";
+    $isAvailable = 1;
 } else {
     $isAvailable = "0";
 }

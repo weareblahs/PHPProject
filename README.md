@@ -27,7 +27,7 @@ assets_public
 # Known bugs
 
 - Tickets under `guest` cannot be deleted
-- All options under "Display options" must be ticked, otherwise the add query won't work
+- Apostrophes on film properties need to be replaced to `''` in order to let it work
 
 # Known functions
 

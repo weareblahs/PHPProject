@@ -54,8 +54,8 @@ function view_carousel($cn)
                         <div class="row container child-div">
                             <div class="col-10">
                                 <?php
-                                if ($film['logoAvailable'] == true) : ?>
-                                    <img src="<?php echo $film['logoPath'] ?>" alt="" class="img-responsive" width="25%">
+                                if ($film['logoAvailable'] == 1) : ?>
+                                    <img src="<?php echo $film['logoPath'] ?>" alt="" class="img-responsive" width="150px">
                                 <?php else : ?>
                                     <h1><?php echo $film['name'] ?></h1>
                                     <h3><i><?php echo $film['altName'] ?></i></h3>

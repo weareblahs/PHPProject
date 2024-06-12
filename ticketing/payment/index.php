@@ -48,18 +48,20 @@ function get_content()
                     <i class="current-fill bi bi-4-circle-fill"></i>
             </div>
             </h1>
-            <div class="row center-div">
-                <div class="col-2"><img src="<?php echo $filmInfo['imagePosterPath'] ?>" alt="" class="img-responsive" width="100px"></div>
-                <div class="col-10" class="d-flex" style="margin-top: auto; margin-bottom: auto">
-                    <h1><?php echo $filmInfo['name'] ?></h1>
-                    <div class="d-flex">
-                        <div style="width:55px;"><img src="/assets_public/images/filmRatings/<?php echo $filmInfo['filmRating'] ?>.png" alt="" style="margin-left: auto; margin-right: auto" class="img-responsive" width="40px"></div>
-                        <div style="margin-top: auto; margin-bottom: auto">
-                            <h6><?php echo $filmInfo['filmGenre'] ?> | <i class="bi bi-volume-up-fill"></i> <?php echo $filmInfo['language'] ?><br><i class="fa-regular fa-closed-captioning"></i> <?php echo $filmInfo['subtitle'] ?> | <i class="fa fa-clock" aria-hidden="true"></i> <?php echo $filmInfo['length'] ?> minutes</h6>
+            <div class="">
+                <div class="row">
+                    <div class="col-5 text-end"><img src="<?php echo $filmInfo['imagePosterPath'] ?>" alt="" class="img-responsive" width="100px"></div>
+                    <div class="col-7 d-block" style="margin-top: auto; margin-bottom: auto">
+                        <h1><?php echo $filmInfo['name'] ?></h1>
+                        <div class="d-flex">
+                            <div style="width:55px;"><img src="/assets_public/images/filmRatings/<?php echo $filmInfo['filmRating'] ?>.png" alt="" style="margin-left: auto; margin-right: auto" class="img-responsive" width="40px"></div>
+                            <div style="margin-top: auto; margin-bottom: auto">
+                                <h6><?php echo $filmInfo['filmGenre'] ?> | <i class="bi bi-volume-up-fill"></i> <?php echo $filmInfo['language'] ?><br><i class="fa-regular fa-closed-captioning"></i> <?php echo $filmInfo['subtitle'] ?> | <i class="fa fa-clock" aria-hidden="true"></i> <?php echo $filmInfo['length'] ?> minutes</h6>
+                            </div>
                         </div>
+                        <p class=""><i class="fa fa-calendar" aria-hidden="true"></i> <i>Currently booking tickets for <?php $timeStr = strtotime($date);
+                                                                                                                        echo date("d M Y", $timeStr) ?></i></p>
                     </div>
-                    <p class="center-div"><i class="fa fa-calendar" aria-hidden="true"></i> <i>Currently booking tickets for <?php $timeStr = strtotime($date);
-                                                                                                                                echo date("d M Y", $timeStr) ?></i></p>
                 </div>
             </div>
         </div>
