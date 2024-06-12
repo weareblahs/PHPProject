@@ -23,6 +23,7 @@ input[type="checkbox"]:checked:before {
 } */
 
 .reserved {
+  appearance: none;
   -webkit-appearance: none;
   background-color: #ff0000;
   border: 1px solid #ff0000;
@@ -40,6 +41,7 @@ input[type="checkbox"]:checked:before {
 }
 
 .seats {
+  appearance: none;
   -webkit-appearance: none;
   background-color: #cecece;
   border: 1px solid #cacece;
