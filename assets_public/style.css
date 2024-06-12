@@ -112,7 +112,7 @@ body {
 }
 
 .preChildDiv {
-  min-width: 20%;
+  object-fit: cover;
   margin-left: auto;
   background-color: #00000088;
   display: flex;

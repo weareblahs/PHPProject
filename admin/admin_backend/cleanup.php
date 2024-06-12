@@ -16,6 +16,9 @@ foreach ($content as $selectedOption) {
         }
         mysqli_query($cn, "DELETE FROM assignedseats WHERE time < $currentTime");
     }
+    if ($selectedOption == "deleteAllShowtimes") {
+        mysqli_query($cn, "DELETE FROM showtimes");
+    }
 }
 mysqli_close($cn);
 header('Location: /admin/cleanup?done=1');

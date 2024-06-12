@@ -1,4 +1,5 @@
 <?php
+$title = 'Cleanup';
 require_once '../../elements/layout.php';
 function get_content()
 {
@@ -25,6 +26,10 @@ function get_content()
                 <br>
                 <input type="checkbox" class="btn-check" name="checkbox[]" id="checkbox2" autocomplete="off" value="ticketsBeyondCurrent">
                 <label class="btn btn-outline-primary" for="checkbox2"><i class="fa fa-ticket" aria-hidden="true"></i> Clean tickets beyond current showtime</label>
+                <br>
+                <br>
+                <input type="checkbox" class="btn-check" name="checkbox[]" id="checkbox3" autocomplete="off" value="deleteAllShowtimes">
+                <label class="btn btn-outline-primary" for="checkbox3"><i class="fa fa-trash" aria-hidden="true"></i> Delete all showtimes</label>
             </div>
             <br>
             <br>

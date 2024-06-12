@@ -16,3 +16,5 @@ if (isset($if) && $if == "1") {
 } else {
     mysqli_query($cn, "UPDATE films SET isFeatured = 0 WHERE filmID = '$filmID'");
 }
+
+header('Location: /admin/view/all');

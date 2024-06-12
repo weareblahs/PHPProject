@@ -95,8 +95,8 @@ function get_content()
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn btn-success" href="/filmDetails?id=<?php echo $film[0] ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a class="btn btn-danger" href="/admin/admin_backend/delete_film.php?id=<?php echo $film[0] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a class="btn btn-success" href="/filmDetails?id=<?php echo $film['filmID'] ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a class="btn btn-danger" href="/admin/admin_backend/delete_film.php?id=<?php echo $film['filmID'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

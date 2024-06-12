@@ -16,8 +16,11 @@ function get_content()
     }
 
     // get movies list
-    $get_films_query = "SELECT * FROM films";
-    $films = mysqli_fetch_all(mysqli_query($cn, $get_films_query));
+    $get_available_query = "SELECT * FROM films WHERE isAvailable = 1 AND releaseDate < CURDATE()";
+    $availableFilms = mysqli_fetch_all(mysqli_query($cn, $get_available_query));
+    // get upcoming movies list
+    $get_upcoming_query = "SELECT * FROM films WHERE isAvailable = 1 AND releaseDate > CURDATE()";
+    $upcomingFilms = mysqli_fetch_all(mysqli_query($cn, $get_upcoming_query));
 ?>
 
     <?php if (isset($_COOKIE['userID'])) : ?>
@@ -31,29 +34,69 @@ function get_content()
     <!-- main content -->
 
     <?php view_carousel($cn) ?>
-    <div class="container p-2">
-        <h2>Movies</h2>
-        <div class="row">
-            <?php foreach ($films as $film) : ?>
-                <div class="col-lg-2 col-sm-6 col-md-4">
-                    <a href="/filmDetails?id=<?php echo $film[0] ?>"><img src="<?php echo $film[13] ?>" alt="" class="img-responsive" width="100%"></a>
+
+    <div class="container py-4">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-nowShowing-tab" data-bs-toggle="pill" data-bs-target="#pills-nowShowing" type="button" role="tab" aria-controls="pills-nowShowing" aria-selected="true">Now showing</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-comingSoon-tab" data-bs-toggle="pill" data-bs-target="#pills-comingSoon" type="button" role="tab" aria-controls="pills-comingSoon" aria-selected="false">Coming soon</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane show active" id="pills-nowShowing" role="tabpanel" aria-labelledby="pills-nowShowing-tab" tabindex="0">
+                <div class="">
                     <div class="row">
-                        <div class="col-9">
-                            <h6 style="margin-top: auto; margin-bottom: auto"><?php echo $film[2] ?></h6>
-                            <?php
-                            $get_experience_query = "SELECT * FROM cinemaexperiences WHERE uniqID = '$film[1]';";
-                            $experience = mysqli_fetch_assoc(mysqli_query($cn, $get_experience_query));
-                            ?>
-                            <div><span class="badge text-bg-primary"><?php echo $experience['name'] ?></span></div>
-                        </div>
-                        <div class="col-3"><img src="/assets_public/images/filmRatings/<?php echo $film[5] ?>.png" alt="" class="img-responsive" width="100%"></div>
+                        <?php foreach ($availableFilms as $film) : ?>
+                            <div class="col-lg-2 col-sm-6 col-md-4">
+                                <a href="/filmDetails?id=<?php echo $film[0] ?>"><img src="<?php echo $film[13] ?>" alt="" class="img-responsive" width="100%"></a>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <h6 style="margin-top: auto; margin-bottom: auto"><?php echo $film[2] ?></h6>
+                                        <?php
+                                        $get_experience_query = "SELECT * FROM cinemaexperiences WHERE uniqID = '$film[1]';";
+                                        $experience = mysqli_fetch_assoc(mysqli_query($cn, $get_experience_query));
+                                        ?>
+                                        <div><span class="badge text-bg-primary"><?php echo $experience['name'] ?></span></div>
+                                    </div>
+                                    <div class="col-3"><img src="/assets_public/images/filmRatings/<?php echo $film[5] ?>.png" alt="" class="img-responsive" width="100%"></div>
+                                </div>
+                            </div>
+
+                        <?php endforeach; ?>
                     </div>
+
                 </div>
+            </div>
+            <div class="tab-pane" id="pills-comingSoon" role="tabpanel" aria-labelledby="pills-comingSoon-tab" tabindex="0">
+                <div class="">
+                    <div class="row">
+                        <?php foreach ($upcomingFilms as $film) : ?>
+                            <div class="col-lg-2 col-sm-6 col-md-4">
+                                <a href="/filmDetails?id=<?php echo $film[0] ?>"><img src="<?php echo $film[13] ?>" alt="" class="img-responsive" width="100%"></a>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <h6 style="margin-top: auto; margin-bottom: auto"><?php echo $film[2] ?></h6>
+                                        <?php
+                                        $get_experience_query = "SELECT * FROM cinemaexperiences WHERE uniqID = '$film[1]';";
+                                        $experience = mysqli_fetch_assoc(mysqli_query($cn, $get_experience_query));
+                                        ?>
+                                        <div><span class="badge text-bg-primary"><?php echo $experience['name'] ?></span></div>
+                                    </div>
+                                    <div class="col-3"><img src="/assets_public/images/filmRatings/<?php echo $film[5] ?>.png" alt="" class="img-responsive" width="100%"></div>
+                                </div>
+                            </div>
 
-            <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
     </div>
+
+
 <?php
 }
 ?>

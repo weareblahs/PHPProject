@@ -49,19 +49,19 @@ function view_carousel($cn)
     <div class="pc-carousel">
         <?php foreach ($featuredFilms as $film) : ?>
             <div class="d-lg-block d-md-block d-sm-none">
-                <div id="parent-div" style="background: url('<?php echo $film['artwork'] ?>'); height: 30em; background-size: cover; background-repeat: no-repeat; z-index: 1; background-position: center;">
+                <div id="parent-div" style="background: url('<?php echo $film['artwork'] ?>'); height: 30em; background-size: cover; background-repeat: no-repeat; z-index: 1; background-position: center; object-fit: cover;">
                     <div class="preChildDiv">
-                        <div class="row container child-div">
+                        <div class="row container child-div" style="min-width: 100vmax; margin: -0.5vw">
                             <div class="col-10">
                                 <?php
                                 if ($film['logoAvailable'] == 1) : ?>
-                                    <img src="<?php echo $film['logoPath'] ?>" alt="" class="img-responsive" width="150px">
+                                    <img src="<?php echo $film['logoPath'] ?>" alt="" class="img-responsive p-2" width="150px">
                                 <?php else : ?>
                                     <h1><?php echo $film['name'] ?></h1>
                                     <h3><i><?php echo $film['altName'] ?></i></h3>
                                 <?php endif; ?>
                             </div>
-                            <div class="col-2" style="margin-top: auto; margin-bottom: auto"><a href="/filmDetails?id=<?php echo $film['filmID'] ?>" class="btn btn-success"><i class="fa fa-film" aria-hidden="true"></i> View details</a></div>
+                            <div class="col-2 text-end" style="margin-top: auto; margin-bottom: auto"><a href="/filmDetails?id=<?php echo $film['filmID'] ?>" class="btn btn-success"><i class="fa fa-film" aria-hidden="true"></i> View details</a></div>
                         </div>
                     </div>
                 </div>
