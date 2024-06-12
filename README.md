@@ -22,6 +22,7 @@ assets_public
 ```
 
 - Ratings are stored under `/admin/add/properties.php`. By default, the ratings under this file are Malaysian film ratings by the Censorship Board of Malaysia (LPF), and images with the same name as the rating set should be stored under `/assets_public/images/filmRatings` as a PNG file.
+- For every new seating template, user should modify the rows and columns by copying the `template.php` file under `/admin/halls/seatmap` to the PHP file that has the generated Seat ID.
 
 # Known bugs
 
