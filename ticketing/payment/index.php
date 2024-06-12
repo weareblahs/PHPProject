@@ -117,7 +117,7 @@ function get_content()
                             </div>
                         </div>
                     <?php elseif ($filmInfo['filmRating'] == "16") : ?>
-                        <div class="container" style="background-color: red; color: white; padding: 1em; margin-bottom: 1em; border-radius: 20px">
+                        <div class="container" style="background-color: orange; color: black; padding: 1em; margin-bottom: 1em; border-radius: 20px">
                             <div>
                                 <h3 class="text-center"><b>Heads up!</b></h3>
                                 <div class="d-flex">
