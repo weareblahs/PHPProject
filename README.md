@@ -48,6 +48,8 @@ This project has a:
 | [mebjas/html5-qrcode](https://github.com/mebjas/html5-qrcode) | QR code scanner for ticket validation                 |
 | [Font Awesome](https://github.com/FortAwesome/Font-Awesome)   | Icons for website                                     |
 
+_Do note that Bootstrap and Font Awesome are included in this project through CDNs. Check `/elements/layout.php` for exact CDN URLs_
+
 ## Image credits
 
 - Cinema seat vector from [here](https://www.svgrepo.com/svg/383570/cinema-seat-theatre-sofa) by `wishforge.games`, converted using [Glyphter](https://glyphter.com/)
