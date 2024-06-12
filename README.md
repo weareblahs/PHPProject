@@ -23,6 +23,7 @@ assets_public
 
 - Ratings are stored under `/admin/add/properties.php`. By default, the ratings under this file are Malaysian film ratings by the Censorship Board of Malaysia (LPF), and images with the same name as the rating set should be stored under `/assets_public/images/filmRatings` as a PNG file.
 - For every new seating template, user should modify the rows and columns by copying the `template.php` file under `/admin/halls/seatmap` to the PHP file that has the generated Seat ID.
+- This project uses `mysqli` for MySQL queries and could be vunerable to SQL injection. To use it in a production environment, please check the PHP codes and replace `mysqli_query` and `mysqli_fetch_all` codes appropriately.
 
 # Known bugs
 
@@ -34,6 +35,19 @@ assets_public
 This project has a:
 
 - Online ticketing system that allows customers to choose date and time, seats and addons
-- Ticket validation system that validates tickets for entrance usage (yes, that "autogate"-like function)
-  - Uses external webcam device
+- Ticket validation system that validates tickets for entrance usage (yes, that "autogate"-like function), which uses external webcam for realtime scanning
 - Administrator management system that allows administrators to manage movies, addons, halls, showtimes and more
+
+# Credits
+
+| Project name                                                  | Used parts                                            |
+| ------------------------------------------------------------- | ----------------------------------------------------- |
+| [Bootstrap](https://github.com/twbs/bootstrap/)               | Website framework                                     |
+| [PHP](https://www.php.net/)                                   | Main programming language used for backend of website |
+| [MySQL](https://www.mysql.com/)                               | Database                                              |
+| [mebjas/html5-qrcode](https://github.com/mebjas/html5-qrcode) | QR code scanner for ticket validation                 |
+| [Font Awesome](https://github.com/FortAwesome/Font-Awesome)   | Icons for website                                     |
+
+## Image credits
+
+- Cinema seat vector from [here](https://www.svgrepo.com/svg/383570/cinema-seat-theatre-sofa) by `wishforge.games`, converted using [Glyphter](https://glyphter.com/)
