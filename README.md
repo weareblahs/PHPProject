@@ -28,3 +28,12 @@ assets_public
 
 - Tickets under `guest` cannot be deleted
 - All options under "Display options" must be ticked, otherwise the add query won't work
+
+# Known functions
+
+This project has a:
+
+- Online ticketing system that allows customers to choose date and time, seats and addons
+- Ticket validation system that validates tickets for entrance usage (yes, that "autogate"-like function)
+  - Uses external webcam device
+- Administrator management system that allows administrators to manage movies, addons, halls, showtimes and more
