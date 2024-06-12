@@ -46,7 +46,7 @@ function get_content()
                     </div>
                     <div class="d-flex align-center justify-content-center mb-2 link-white" style="background: #0000ff; color: #ffffff">
                         <a href="/admin/view">
-                            <h1>View currently showing movies</h1>
+                            <h1>Manage movies</h1>
                         </a>
                     </div>
                     <div class="d-flex align-center justify-content-center mb-2 link-white" style="background: #0000ff; color: #ffffff">
