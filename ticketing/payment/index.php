@@ -126,6 +126,16 @@ function get_content()
                                 </div>
                             </div>
                         </div>
+                    <?php elseif ($filmInfo['filmRating'] == "13") : ?>
+                        <div class="container" style="background-color: yellow; color: black; padding: 1em; margin-bottom: 1em; border-radius: 20px">
+                            <div>
+                                <h3 class="text-center"><b>Heads up!</b></h3>
+                                <div class="d-flex">
+                                    <img src="/assets_public/images/filmRatings/13.png" alt="" class="img-responsive" style="padding-right: 0.5em; margin-top: 0.2em" width="75px" height="50px">
+                                    <h6>This movie is rated 13, which means that the movie is <b>suitable for audiences 13 years old and above</b>. Audiences must present their identity card as a proof of age to enter the hall.</h6>
+                                </div>
+                            </div>
+                        </div>
                     <?php endif; ?>
                     <?php if (isset($_COOKIE['userID'])) : ?>
                         <div>

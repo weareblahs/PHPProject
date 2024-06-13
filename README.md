@@ -43,13 +43,14 @@ This project has a:
 
 # Credits
 
-| Project name                                                  | Used parts                                            |
-| ------------------------------------------------------------- | ----------------------------------------------------- |
-| [Bootstrap](https://github.com/twbs/bootstrap/)               | Website framework                                     |
-| [PHP](https://www.php.net/)                                   | Main programming language used for backend of website |
-| [MySQL](https://www.mysql.com/)                               | Database                                              |
-| [mebjas/html5-qrcode](https://github.com/mebjas/html5-qrcode) | QR code scanner for ticket validation                 |
-| [Font Awesome](https://github.com/FortAwesome/Font-Awesome)   | Icons for website                                     |
+| Project name                                                                                                                                                                              | Used parts                                            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| [Bootstrap](https://github.com/twbs/bootstrap/)                                                                                                                                           | Website framework                                     |
+| [PHP](https://www.php.net/)                                                                                                                                                               | Main programming language used for backend of website |
+| [MySQL](https://www.mysql.com/)                                                                                                                                                           | Database                                              |
+| [mebjas/html5-qrcode](https://github.com/mebjas/html5-qrcode)                                                                                                                             | QR code scanner for ticket validation                 |
+| [Font Awesome](https://github.com/FortAwesome/Font-Awesome)                                                                                                                               | Icons for website                                     |
+| [DM Sans by Colophon Foundry via Google Fonts](https://fonts.google.com/specimen/DM+Sans)<br>[Inconsolata by Raph Levien via Google Fonts](https://fonts.google.com/specimen/Inconsolata) | Font for this project                                 |
 
 _Do note that Bootstrap and Font Awesome are included in this project through CDNs. Check `/elements/layout.php` for exact CDN URLs_
 
