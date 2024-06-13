@@ -16,7 +16,7 @@ function get_content()
     }
 
     // get movies list
-    $get_available_query = "SELECT * FROM films WHERE isAvailable = 1 AND releaseDate < CURDATE()";
+    $get_available_query = "SELECT * FROM films WHERE isAvailable = 1 AND releaseDate <= CURDATE()";
     $availableFilms = mysqli_fetch_all(mysqli_query($cn, $get_available_query));
     // get upcoming movies list
     $get_upcoming_query = "SELECT * FROM films WHERE isAvailable = 1 AND releaseDate > CURDATE()";
