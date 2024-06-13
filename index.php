@@ -82,7 +82,14 @@ function get_content()
                                         $get_experience_query = "SELECT * FROM cinemaexperiences WHERE uniqID = '$film[1]';";
                                         $experience = mysqli_fetch_assoc(mysqli_query($cn, $get_experience_query));
                                         ?>
-                                        <div><span class="badge text-bg-primary"><?php echo $experience['name'] ?></span></div>
+                                        <div><span class="badge text-bg-primary"><?php echo $experience['name'] ?></span>
+                                            <?php
+                                            if ($experience['associatedShowtimeID'] !== "none") {
+                                                echo '<span class="badge text-bg-primary">Advance booking</span>';
+                                            } else {
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
                                     <div class="col-3"><img src="/assets_public/images/filmRatings/<?php echo $film[5] ?>.png" alt="" class="img-responsive" width="100%"></div>
                                 </div>
