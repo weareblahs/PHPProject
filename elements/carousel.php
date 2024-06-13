@@ -16,7 +16,7 @@ function view_carousel($cn)
     $featuredFilms = mysqli_fetch_all(mysqli_query($cn, $view_film_query), MYSQLI_ASSOC);
 
 ?>
-    <div class="d-lg-none d-md-none d-sm-block" style="background-color: black;">
+    <div class="d-lg-none d-md-block d-sm-block" style="background-color: black;" class="w-100">
         <div class="single-item container">
             <?php
             foreach ($featuredFilms as $film) : ?>
@@ -48,17 +48,17 @@ function view_carousel($cn)
     </div>
     <div class="pc-carousel">
         <?php foreach ($featuredFilms as $film) : ?>
-            <div class="d-lg-block d-md-block d-sm-none">
+            <div class="d-none d-lg-block">
                 <div id="parent-div" style="background: url('<?php echo $film['artwork'] ?>'); height: 30em; background-size: cover; background-repeat: no-repeat; z-index: 1; background-position: center; object-fit: cover;">
                     <div class="preChildDiv">
                         <div class="row container child-div" style="min-width: 100vmax; margin: -0.5vw">
                             <div class="col-10">
                                 <?php
                                 if ($film['logoAvailable'] == 1) : ?>
-                                    <img src="<?php echo $film['logoPath'] ?>" alt="" class="img-responsive p-2" width="150px">
+                                    <img src="<?php echo $film['logoPath'] ?>" alt="" class="img-responsive p-4" width="200px">
                                 <?php else : ?>
                                     <h1><?php echo $film['name'] ?></h1>
-                                    <h3><i><?php echo $film['altName'] ?></i></h3>
+                                    <h4><i><?php echo $film['altName'] ?></i></h4>
                                 <?php endif; ?>
                             </div>
                             <div class="col-2 text-end" style="margin-top: auto; margin-bottom: auto"><a href="/filmDetails?id=<?php echo $film['filmID'] ?>" class="btn btn-success"><i class="fa fa-film" aria-hidden="true"></i> View details</a></div>
@@ -73,8 +73,6 @@ function view_carousel($cn)
 
     <script>
         $('.single-item').slick({
-            variableWidth: true,
-            mobileFirst: true,
             autoplay: true,
             autoplaySpeed: 5000,
         });

@@ -18,7 +18,7 @@ foreach ($showtimes as $showtime) {
 mysqli_close($cn);
 head();
 ?>
-<div class="container">
+<div class="container" bs-data-theme="dark">
     <div class="center-div m-5">
         <h1 class="text-center"><?php echo $showtimeCounter ?> showtimes added</h1>
         <h4 class="text-center">These showtimes are now live in the ticketing page</h4>
