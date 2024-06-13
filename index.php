@@ -80,11 +80,11 @@ function get_content()
                                         <h6 style="margin-top: auto; margin-bottom: auto"><?php echo $film[2] ?></h6>
                                         <?php
                                         $get_experience_query = "SELECT * FROM cinemaexperiences WHERE uniqID = '$film[1]';";
-                                        $experience = mysqli_fetch_assoc(mysqli_query($cn, $get_experience_query));
+                                        $experience = mysqli_fetch_all(mysqli_query($cn, $get_experience_query), MYSQLI_ASSOC)[0];
                                         ?>
                                         <div><span class="badge text-bg-primary"><?php echo $experience['name'] ?></span>
                                             <?php
-                                            if ($experience['associatedShowtimeID'] !== "none") {
+                                            if ($film['15'] !== "none") {
                                                 echo '<span class="badge text-bg-primary">Advance booking</span>';
                                             } else {
                                             }
