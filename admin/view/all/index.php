@@ -50,10 +50,10 @@ function get_content()
                             <?php endif; ?>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeVisibility">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeVisibility-<?php echo $film['filmID'] ?>">
                                 <i class="fa fa-exchange" aria-hidden="true"></i>
                             </button>
-                            <div class="modal fade" id="changeVisibility" tabindex="-1" aria-labelledby="changeVisibility" aria-hidden="true">
+                            <div class="modal fade" id="changeVisibility-<?php echo $film['filmID'] ?>" tabindex="-1" aria-labelledby="changeVisibility-<?php echo $film['filmID'] ?>" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
